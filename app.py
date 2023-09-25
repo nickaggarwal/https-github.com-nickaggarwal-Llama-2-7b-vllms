@@ -9,9 +9,9 @@ class InferlessPythonModel:
         self.template = """SYSTEM: You are a helpful assistant.
         USER: {}
         ASSISTANT: """
-        local_path = "/var/nfs-mount/LLama-2-vllm"
+        local_path = "/var/nfs-mount/LLama-2-vllm/model"
         if os.path.exists(local_path) == False :
-            os.mkdir(local_path)
+            os.mkdirs(local_path)
             snapshot_download(
                 "meta-llama/Llama-2-7b-chat-hf",
                 local_dir=local_path,
