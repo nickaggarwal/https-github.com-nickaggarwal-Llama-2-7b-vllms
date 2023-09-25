@@ -9,7 +9,7 @@ class InferlessPythonModel:
         self.template = """SYSTEM: You are a helpful assistant.
         USER: {}
         ASSISTANT: """
-        local_path = "/var/nfs-mount/LLama-2-vllm/model"
+        local_path = "/var/nfs-mount/LLama-2-vllm"
         if os.path.exists(local_path) == False :
             os.mkdir(local_path)
             snapshot_download(
