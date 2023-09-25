@@ -11,6 +11,7 @@ class InferlessPythonModel:
         ASSISTANT: """
         local_path = "/var/nfs-mount/LLama-2-vllm/model"
         if os.path.exists(local_path) :
+            os.mkdir(path)
             snapshot_download(
                 "meta-llama/Llama-2-7b-chat-hf",
                 local_dir=local_path,
