@@ -9,12 +9,14 @@ class InferlessPythonModel:
         self.template = """SYSTEM: You are a helpful assistant.
         USER: {}
         ASSISTANT: """
-        snapshot_download(
-            "meta-llama/Llama-2-7b-chat-hf",
-            local_dir="/model",
-            token="<<your_token>>",
-        )
-        self.llm = LLM("/model")
+        local_path = "/var/nfs-mount/LLama-2-vllm/model"
+        if os.path.exists(local_path) :
+            snapshot_download(
+                "meta-llama/Llama-2-7b-chat-hf",
+                local_dir=local_path,
+                token="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",
+            )
+        self.llm = LLM(local_path)
     
     def infer(self, inputs):
         print("inputs[questions] -->", inputs["questions"], flush=True)
