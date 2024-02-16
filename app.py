@@ -28,9 +28,7 @@ class InferlessPythonModel:
             max_tokens=250,
             presence_penalty=1.15,
         )
-        result_output = {"result" : "works"}
-
-        return {"result": result_output[0]}
+        return {"result" : "works"}
 
     def finalize(self, args):
         pass
