@@ -20,7 +20,7 @@ class InferlessPythonModel:
                 allow_patterns=["*.md", "*.json", "*.bin"]
             )
         self.llm = LLM(
-          model="/var/nfs-mount/translation-pipeline-volume/model1",
+          model="/var/nfs-mount/translation-pipeline-volume/model2",
           dtype="float16")
     
     def infer(self, inputs):
