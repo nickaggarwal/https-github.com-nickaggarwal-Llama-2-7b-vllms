@@ -1,7 +1,7 @@
 INPUT_SCHEMA = {
   "questions": 
     {
-      "data": [
+      "example": [
         "What is Quantum Computing?"
       ],
       "shape": [
