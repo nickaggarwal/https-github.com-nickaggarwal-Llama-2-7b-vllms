@@ -17,6 +17,7 @@ class InferlessPythonModel:
                 local_dir=local_path,
                 token="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",
             )
+        self.model = LLM("/var/nfs-mount/translation-pipeline-volume/model1")
     
     def infer(self, inputs):
         print("inputs[questions] -->", inputs["questions"], flush=True)
