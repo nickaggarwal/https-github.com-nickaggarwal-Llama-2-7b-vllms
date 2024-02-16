@@ -17,7 +17,6 @@ class InferlessPythonModel:
                 local_dir=local_path,
                 token="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",
             )
-        self.llm = LLM(local_path)
     
     def infer(self, inputs):
         print("inputs[questions] -->", inputs["questions"], flush=True)
@@ -29,8 +28,7 @@ class InferlessPythonModel:
             max_tokens=250,
             presence_penalty=1.15,
         )
-        result = self.llm.generate(prompts, sampling_params)
-        result_output = [output.outputs[0].text for output in result]
+        result_output = {"result" : "works"}
 
         return {"result": result_output[0]}
 
