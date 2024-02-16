@@ -17,6 +17,7 @@ class InferlessPythonModel:
                 local_dir=local_path,
                 local_dir_use_symlinks=False ,
                 token="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",
+                allow_patterns=["*.md", "*.json", "*.bin"]
             )
         self.llm = LLM(
           model="/var/nfs-mount/translation-pipeline-volume/model1",
