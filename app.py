@@ -9,13 +9,13 @@ class InferlessPythonModel:
         self.template = """SYSTEM: You are a helpful assistant.
         USER: {}
         ASSISTANT: """
-        local_path = "/tmp/model-vllm"
+        local_path = "/var/nfs-mount/translation-pipeline-volume"
         if os.path.exists(local_path) == False :
             os.makedirs(local_path)
             snapshot_download(
                 "meta-llama/Llama-2-7b-chat-hf",
                 local_dir=local_path,
-                token="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",
+                token="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",
             )
         self.llm = LLM(local_path)
     
