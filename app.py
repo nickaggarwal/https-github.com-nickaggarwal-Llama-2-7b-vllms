@@ -9,7 +9,7 @@ class InferlessPythonModel:
         self.template = """SYSTEM: You are a helpful assistant.
         USER: {}
         ASSISTANT: """
-        local_path = "/var/nfs-mount/translation-pipeline-volume/model2"
+        local_path = "/var/nfs-mount/translation-pipeline-volume/model3"
         if os.path.exists(local_path) == False :
             os.makedirs(local_path)
             snapshot_download(
@@ -20,7 +20,7 @@ class InferlessPythonModel:
                 allow_patterns=["*.md", "*.json", "*.bin"]
             )
         self.llm = LLM(
-          model="/var/nfs-mount/translation-pipeline-volume/model2",
+          model="/var/nfs-mount/translation-pipeline-volume/model3",
           dtype="float16")
     
     def infer(self, inputs):
