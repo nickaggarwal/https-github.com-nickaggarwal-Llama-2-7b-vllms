@@ -16,8 +16,7 @@ class InferlessPythonModel:
                 "meta-llama/Llama-2-7b-chat-hf",
                 local_dir=local_path,
                 local_dir_use_symlinks=False ,
-                token="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",
-                allow_patterns=["*.md", "*.json", "*.bin"]
+                token="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"
             )
         self.llm = LLM(
           model="/var/nfs-mount/translation-pipeline-volume/model3",
